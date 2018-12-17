@@ -11,7 +11,7 @@ public class Login extends Form implements HandlesEventDispatching {
 
     @Override
     public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] args) {
-        return false;
+        return false; //no
     }
 }
 
