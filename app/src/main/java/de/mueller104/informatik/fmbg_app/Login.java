@@ -15,7 +15,7 @@ import com.google.appinventor.components.runtime.PasswordTextBox;
 import com.google.appinventor.components.runtime.TextBox;
 import com.google.appinventor.components.runtime.VerticalArrangement;
 
-import org.mindrot.jbcrypt.BCrypt;
+import java.security.MessageDigest;
 
 public class Login extends Form implements HandlesEventDispatching {
     private PasswordTextBox Password;
@@ -30,7 +30,9 @@ public class Login extends Form implements HandlesEventDispatching {
     private Label Space2;
     private Button Weiter;
     private boolean automatic = false;
+    MessageDigest md = MessageDigest.getInstance("SHA-256");
     //private String HashedPassword = ;
+    private String Salt = "";
 
 
 
@@ -47,9 +49,8 @@ public class Login extends Form implements HandlesEventDispatching {
         Layout1.AlignVertical(2);
         Password = new PasswordTextBox(Layout1);
         Info2 = new Label(Layout1);
-       // Info2.Text("Geben Sie bitte das Passwort ein");
-        //String hashed = BCrypt.hashpw("password", BCrypt.gensalt(16));
-        //Info2.Text(String.valueOf(BCrypt.checkpw("", hashed)));
+        Info2.Text("Geben Sie bitte das Passwort ein");
+        //String hashed = ;
         Space1 = new Label(Layout1);
         Space1.HeightPercent(10);
         Layout2 = new HorizontalArrangement(Layout1);
